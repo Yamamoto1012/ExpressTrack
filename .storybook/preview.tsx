@@ -1,6 +1,8 @@
 import React from "react";
 import { Noto_Sans_JP } from "next/font/google";
+
 import "../app/globals.css";
+
 import type { Preview, StoryFn } from "@storybook/react";
 
 const NotoSansJP = Noto_Sans_JP({

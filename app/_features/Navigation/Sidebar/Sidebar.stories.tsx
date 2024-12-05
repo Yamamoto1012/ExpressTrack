@@ -1,5 +1,6 @@
-import { SidebarView } from "./SidebarView";
 import { Meta, StoryObj } from "@storybook/react";
+
+import { SidebarView } from "./SidebarView";
 
 const meta = {
   title: "features/Navigation/Sidebar",
