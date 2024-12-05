@@ -1,7 +1,7 @@
 ---
 name: リファクタリングリクエスト
 about: コードのリファクタリングをリクエストしてください
-title: "[リファクタリング] <簡単な説明>"
+title: "Refactoring: <簡単な説明>"
 labels: refactor
 ---
 

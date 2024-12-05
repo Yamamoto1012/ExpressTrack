@@ -1,7 +1,7 @@
 ---
 name: 機能提案
 about: 新しい機能や改善案を提案してください
-title: "[提案] <簡単な説明>"
+title: "Feat: <簡単な説明>"
 labels: enhancement
 ---
 
