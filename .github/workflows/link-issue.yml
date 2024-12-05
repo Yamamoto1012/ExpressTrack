@@ -1,0 +1,27 @@
+name: Link Issue to Pull Request
+
+on:
+  pull_request:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  link-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract Issue Number from Title
+        id: extract_issue
+        run: |
+          echo "ISSUE_NUMBER=$(echo '${{ github.event.pull_request.title }}' | grep -o '#[0-9]\+' | grep -o '[0-9]\+')" >> $GITHUB_OUTPUT
+
+      - name: Link Issue to Pull Request
+        if: steps.extract_issue.outputs.ISSUE_NUMBER != ''
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ steps.extract_issue.outputs.ISSUE_NUMBER }}
+          body: |
+            関連するプルリクエスト: #${{ github.event.pull_request.number }}
